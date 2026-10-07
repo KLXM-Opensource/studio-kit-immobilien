@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Beispiel-Export im Format OpenImmo 1.2.7 für Tests des Imports (kits/immobilien/tools/openimmo.php):
+    php bin/console openimmo:import kits/immobilien/tools/openimmo-sample.xml (Option dry-run, Website per site=…)
+  Alle Angaben sind frei erfunden. Die Anhänge verweisen auf Dateien, die es nicht gibt – der Import meldet sie und läuft weiter.
+-->
+<openimmo>
+  <uebertragung art="OFFLINE" umfang="TEIL" modus="CHANGE" version="1.2.7" sendersoftware="Beispiel-Makler-CRM" senderversion="5.4" techn_email="technik@example.com" timestamp="2026-10-01T09:30:00"/>
+  <anbieter>
+    <anbieternr>DEMO-4711</anbieternr>
+    <firma>Beispiel Immobilien GmbH (Demo)</firma>
+    <openimmo_anid>ADEMO20261001093000</openimmo_anid>
+
+    <!-- 1) Wohnung zur Miete, Energieausweis nach Verbrauch -->
+    <immobilie>
+      <objektkategorie>
+        <nutzungsart WOHNEN="true" GEWERBE="false" ANLAGE="false" WAZ="false"/>
+        <vermarktungsart KAUF="false" MIETE_PACHT="true"/>
+        <objektart>
+          <wohnung wohnungtyp="ETAGE"/>
+        </objektart>
+      </objektkategorie>
+      <geo>
+        <plz>47441</plz>
+        <ort>Moers</ort>
+        <geokoordinaten breitengrad="51.4513" laengengrad="6.6262"/>
+        <strasse>Beispielstraße</strasse>
+        <hausnummer>12a</hausnummer>
+        <land iso_land="DEU"/>
+        <etage>2</etage>
+        <anzahl_etagen>4</anzahl_etagen>
+        <regionaler_zusatz>Innenstadt</regionaler_zusatz>
+      </geo>
+      <kontaktperson>
+        <email_zentrale>info@example.com</email_zentrale>
+        <email_direkt>anna.beispiel@example.com</email_direkt>
+        <tel_zentrale>02841 123450</tel_zentrale>
+        <tel_durchw>02841 123451</tel_durchw>
+        <name>Beispiel</name>
+        <vorname>Anna</vorname>
+        <position>Vermietung</position>
+        <firma>Beispiel Immobilien GmbH (Demo)</firma>
+      </kontaktperson>
+      <preise>
+        <nettokaltmiete>890.00</nettokaltmiete>
+        <kaltmiete>890.00</kaltmiete>
+        <warmmiete>1150.00</warmmiete>
+        <nebenkosten>260.00</nebenkosten>
+        <heizkosten_enthalten>true</heizkosten_enthalten>
+        <provisionspflichtig>false</provisionspflichtig>
+        <waehrung iso_waehrung="EUR"/>
+        <kaution_text>3 Nettokaltmieten</kaution_text>
+      </preise>
+      <flaechen>
+        <wohnflaeche>82.5</wohnflaeche>
+        <anzahl_zimmer>3</anzahl_zimmer>
+        <anzahl_schlafzimmer>2</anzahl_schlafzimmer>
+        <anzahl_badezimmer>1</anzahl_badezimmer>
+        <anzahl_balkone>1</anzahl_balkone>
+        <anzahl_stellplaetze>1</anzahl_stellplaetze>
+      </flaechen>
+      <ausstattung>
+        <ausstatt_kategorie>GEHOBEN</ausstatt_kategorie>
+        <kueche EBK="true"/>
+        <heizungsart ZENTRAL="true" FUSSBODEN="true"/>
+        <befeuerung GAS="true"/>
+        <fahrstuhl PERSONEN="true"/>
+        <stellplatzart TIEFGARAGE="true"/>
+        <barrierefrei>false</barrierefrei>
+        <unterkellert keller="JA"/>
+        <gaestewc>true</gaestewc>
+      </ausstattung>
+      <zustand_angaben>
+        <baujahr>1998</baujahr>
+        <letztemodernisierung>2021 (Bad, Fenster)</letztemodernisierung>
+        <zustand zustand_art="GEPFLEGT"/>
+        <energiepass>
+          <epart>VERBRAUCH</epart>
+          <gueltig_bis>14.03.2032</gueltig_bis>
+          <energieverbrauchkennwert>112,4</energieverbrauchkennwert>
+          <mitwarmwasser>true</mitwarmwasser>
+          <primaerenergietraeger>GAS</primaerenergietraeger>
+          <wertklasse>D</wertklasse>
+          <baujahr>1998</baujahr>
+          <jahrgang>2014</jahrgang>
+          <gebaeudeart>wohn</gebaeudeart>
+        </energiepass>
+        <verkaufstatus stand="OFFEN"/>
+      </zustand_angaben>
+      <freitexte>
+        <objekttitel>Helle 3-Zimmer-Wohnung mit Südbalkon &amp; Aufzug</objekttitel>
+        <dreizeiler>Gepflegte Etagenwohnung im 2. OG, ruhig und dennoch zentral gelegen – Einbauküche, Tiefgaragenstellplatz.</dreizeiler>
+        <lage>Die Wohnung liegt in einer ruhigen Seitenstraße der Innenstadt.
+
+Supermarkt, Ärzte und Bushaltestelle sind in wenigen Minuten zu Fuß erreichbar.</lage>
+        <ausstatt_beschr>- Einbauküche mit Geschirrspüler
+- Bad mit Dusche und Fenster
+- Gäste-WC
+- Fußbodenheizung im Wohnbereich</ausstatt_beschr>
+        <objektbeschreibung>Diese helle Wohnung überzeugt mit einem durchdachten Grundriss: Wohn- und Essbereich mit Zugang zum Südbalkon, zwei Schlafzimmer, ein Bad mit Dusche und ein separates Gäste-WC.
+
+Ein Kellerraum und ein Tiefgaragenstellplatz gehören dazu.</objektbeschreibung>
+        <sonstige_angaben>Haustiere nach Absprache. Besichtigungen nach Vereinbarung.</sonstige_angaben>
+      </freitexte>
+      <anhaenge>
+        <anhang location="EXTERN" gruppe="TITELBILD">
+          <anhangtitel>Wohnzimmer mit Zugang zum Südbalkon</anhangtitel>
+          <format>image/jpeg</format>
+          <daten><pfad>bilder/whg-wohnzimmer.jpg</pfad></daten>
+        </anhang>
+        <anhang location="EXTERN" gruppe="INNENANSICHTEN">
+          <anhangtitel>Offene Einbauküche</anhangtitel>
+          <format>jpg</format>
+          <daten><pfad>bilder/whg-kueche.jpg</pfad></daten>
+        </anhang>
+        <anhang location="EXTERN" gruppe="GRUNDRISS">
+          <anhangtitel>Grundriss 2. OG</anhangtitel>
+          <format>image/png</format>
+          <daten><pfad>bilder/whg-grundriss.png</pfad></daten>
+        </anhang>
+        <anhang location="REMOTE" gruppe="FILMLINK">
+          <anhangtitel>Video-Rundgang</anhangtitel>
+          <format>text/html</format>
+          <daten><pfad>https://www.youtube.com/watch?v=dQw4w9WgXcQ</pfad></daten>
+        </anhang>
+      </anhaenge>
+      <verwaltung_objekt>
+        <objektadresse_freigeben>false</objektadresse_freigeben>
+        <verfuegbar_ab>01.12.2026</verfuegbar_ab>
+        <haustiere>true</haustiere>
+      </verwaltung_objekt>
+      <verwaltung_techn>
+        <objektnr_intern>4711-01</objektnr_intern>
+        <objektnr_extern>M-2026-014</objektnr_extern>
+        <aktion aktionart="CHANGE"/>
+        <openimmo_obid>ODEMO20261001093000000014</openimmo_obid>
+        <kennung_ursprung>Beispiel-Makler-CRM</kennung_ursprung>
+        <stand_vom>2026-10-01</stand_vom>
+      </verwaltung_techn>
+    </immobilie>
+
+    <!-- 2) Einfamilienhaus zum Kauf, Energieausweis nach Bedarf -->
+    <immobilie>
+      <objektkategorie>
+        <nutzungsart WOHNEN="true" GEWERBE="false"/>
+        <vermarktungsart KAUF="true" MIETE_PACHT="false"/>
+        <objektart>
+          <haus haustyp="EINFAMILIENHAUS"/>
+        </objektart>
+      </objektkategorie>
+      <geo>
+        <plz>47447</plz>
+        <ort>Moers</ort>
+        <geokoordinaten breitengrad="51.4402" laengengrad="6.6012"/>
+        <strasse>Am Musterpark</strasse>
+        <hausnummer>7</hausnummer>
+        <land iso_land="DEU"/>
+        <anzahl_etagen>2</anzahl_etagen>
+        <regionaler_zusatz>Schwafheim</regionaler_zusatz>
+      </geo>
+      <kontaktperson>
+        <email_zentrale>info@example.com</email_zentrale>
+        <email_direkt>bernd.muster@example.com</email_direkt>
+        <tel_zentrale>02841 123450</tel_zentrale>
+        <tel_durchw>02841 123452</tel_durchw>
+        <name>Muster</name>
+        <vorname>Bernd</vorname>
+        <position>Immobilienberater</position>
+      </kontaktperson>
+      <preise>
+        <kaufpreis>489000</kaufpreis>
+        <provisionspflichtig>true</provisionspflichtig>
+        <aussen_courtage mit_mwst="true">3,57 % vom Kaufpreis</aussen_courtage>
+        <waehrung iso_waehrung="EUR"/>
+      </preise>
+      <flaechen>
+        <wohnflaeche>146</wohnflaeche>
+        <nutzflaeche>60</nutzflaeche>
+        <grundstuecksflaeche>520</grundstuecksflaeche>
+        <anzahl_zimmer>5.5</anzahl_zimmer>
+        <anzahl_schlafzimmer>4</anzahl_schlafzimmer>
+        <anzahl_badezimmer>2</anzahl_badezimmer>
+        <anzahl_terrassen>1</anzahl_terrassen>
+        <anzahl_stellplaetze>2</anzahl_stellplaetze>
+      </flaechen>
+      <ausstattung>
+        <ausstatt_kategorie>STANDARD</ausstatt_kategorie>
+        <kueche EBK="true" OFFEN="true"/>
+        <kamin>true</kamin>
+        <heizungsart FUSSBODEN="true"/>
+        <befeuerung LUFTWP="true" SOLAR="true"/>
+        <stellplatzart GARAGE="true" FREIPLATZ="true"/>
+        <gartennutzung>true</gartennutzung>
+        <breitband_zugang art="FTTH" speed="1000"/>
+        <unterkellert keller="TEIL"/>
+        <gaestewc>true</gaestewc>
+      </ausstattung>
+      <zustand_angaben>
+        <baujahr>2009</baujahr>
+        <zustand zustand_art="NEUWERTIG"/>
+        <energiepass>
+          <epart>BEDARF</epart>
+          <gueltig_bis>2034-06-30</gueltig_bis>
+          <endenergiebedarf>48.2</endenergiebedarf>
+          <primaerenergietraeger>Strom-Mix (Wärmepumpe)</primaerenergietraeger>
+          <wertklasse>A</wertklasse>
+          <jahrgang>2014</jahrgang>
+          <gebaeudeart>wohn</gebaeudeart>
+        </energiepass>
+        <verkaufstatus stand="RESERVIERT"/>
+      </zustand_angaben>
+      <freitexte>
+        <objekttitel>Familienfreundliches Einfamilienhaus mit Garten in Schwafheim</objekttitel>
+        <dreizeiler>Modernes Einfamilienhaus (Baujahr 2009) mit Wärmepumpe, Kamin und großem Garten – Energieeffizienzklasse A.</dreizeiler>
+        <lage>Ruhige Anliegerstraße am Ortsrand, Grundschule und Kindergarten fußläufig.</lage>
+        <objektbeschreibung>Auf rund 146 m² Wohnfläche bietet das Haus Platz für die ganze Familie: offener Wohn- und Essbereich mit Kamin, vier Schlafzimmer und zwei Bäder.</objektbeschreibung>
+      </freitexte>
+      <anhaenge>
+        <anhang location="EXTERN" gruppe="TITELBILD">
+          <anhangtitel>Gartenansicht mit Terrasse</anhangtitel>
+          <format>image/jpeg</format>
+          <daten><pfad>bilder/haus-garten.jpg</pfad></daten>
+        </anhang>
+        <anhang location="EXTERN" gruppe="AUSSENANSICHTEN">
+          <anhangtitel>Straßenansicht</anhangtitel>
+          <format>image/jpeg</format>
+          <daten><pfad>bilder/haus-strasse.jpg</pfad></daten>
+        </anhang>
+        <anhang location="EXTERN" gruppe="DOKUMENTE">
+          <anhangtitel>Exposé</anhangtitel>
+          <format>application/pdf</format>
+          <daten><pfad>dokumente/expose-K-2026-007.pdf</pfad></daten>
+        </anhang>
+        <anhang location="REMOTE" gruppe="LINKS">
+          <anhangtitel>360°-Rundgang</anhangtitel>
+          <format>text/html</format>
+          <daten><pfad>https://my.matterport.com/show/?m=BEISPIEL123</pfad></daten>
+        </anhang>
+      </anhaenge>
+      <verwaltung_objekt>
+        <objektadresse_freigeben>true</objektadresse_freigeben>
+        <verfuegbar_ab>nach Vereinbarung</verfuegbar_ab>
+      </verwaltung_objekt>
+      <verwaltung_techn>
+        <objektnr_extern>K-2026-007</objektnr_extern>
+        <aktion/>
+        <openimmo_obid>ODEMO20261001093000000007</openimmo_obid>
+        <stand_vom>2026-09-28</stand_vom>
+      </verwaltung_techn>
+    </immobilie>
+  </anbieter>
+</openimmo>

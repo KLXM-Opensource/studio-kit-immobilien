@@ -1,0 +1,23 @@
+{
+    "name": "klxm-studio/kit-immobilien",
+    "description": "Kit „Immobilien“ für KLXM Studio – Makler und Hausverwaltung: Objekte mit Filter und Detailseite, Exposé auf Anfrage, Energieausweis, Widerrufsfunktion, OpenImmo-Import und -Export",
+    "type": "klxm-studio-kit",
+    "license": "MIT",
+    "homepage": "https://studio.klxm.de/kit",
+    "keywords": ["klxm-studio", "kit", "immobilien", "makler", "hausverwaltung", "openimmo"],
+    "authors": [{"name": "KLXM Crossmedia", "homepage": "https://klxm.de"}],
+    "support": {
+        "source": "https://github.com/KLXM-Opensource/studio-kit-immobilien",
+        "issues": "https://github.com/KLXM-Opensource/studio-kit-immobilien/issues"
+    },
+    "require": {
+        "php": ">=8.4"
+    },
+    "extra": {
+        "klxm-studio": {
+            "kit": "immobilien",
+            "public": "public",
+            "requires-core": ">=1.0.0"
+        }
+    }
+}
