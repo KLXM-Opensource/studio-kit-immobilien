@@ -377,7 +377,7 @@ function immo_card(array $e, array $o = []): string
     $h = $o['htag'] ?? 'h3';
     $facts = immo_facts($e, 3);
     $title = trim((string) ($e['titel'] ?? ''));
-    $out = '<li class="pcard' . ($badge !== '' ? ' pcard--off' : '') . (!empty($o['class']) ? ' ' . e((string) $o['class']) : '') . '" data-reveal style="--i:' . (int) ($o['i'] ?? 0) % 6 . '">';
+    $out = '<li class="pcard' . ($badge !== '' ? ' pcard--off' : '') . (!empty($o['class']) ? ' ' . e((string) $o['class']) : '') . '" data-reveal data-i="' . ((int) ($o['i'] ?? 0) % 6) . '">';
     $out .= '<div class="pcard__media">' . immobilien_image($img, $o['sizes'] ?? '(min-width: 1080px) 380px, (min-width: 640px) 45vw, 100vw', '3:2', 'pcard__img');
     $out .= '<span class="pcard__tags"><span class="ptag">' . e(immo_is_rent($e) ? lt('Miete') : lt('Kauf')) . '</span>'
         . ($badge !== '' ? '<span class="ptag ptag--state">' . e($badge) . '</span>' : '') . (!empty($e['featured']) && $badge === '' ? '<span class="ptag ptag--top">' . e(lt('Top')) . '</span>' : '') . '</span></div>';

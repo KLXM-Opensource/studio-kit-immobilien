@@ -108,3 +108,6 @@
   .has-motion .pcard:has(.pcard__link:hover) .pcard__img img{scale:1.045}
   .has-motion .pfilter__seg span{transition:background-color .2s,color .2s}
 }
+
+/* Verzögerung der Einblendung je Karte über data-i (statt style="--i" – CSP ohne unsafe-inline) */
+:is(.pcard,.pperson)[data-i="1"]{--i:1}:is(.pcard,.pperson)[data-i="2"]{--i:2}:is(.pcard,.pperson)[data-i="3"]{--i:3}:is(.pcard,.pperson)[data-i="4"]{--i:4}:is(.pcard,.pperson)[data-i="5"]{--i:5}

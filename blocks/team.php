@@ -16,7 +16,7 @@ $tag = immobilien_htag($d);
   <?php if ($rows): ?>
   <ul class="pteam pteam--<?= e($v) ?><?= $v === 'grid' ? ' grid ' . e(immobilien_min($d)) : '' ?>" role="list">
     <?php foreach ($rows as $pi => $p): $tel = trim((string) ($p['telefon'] ?? '')); $mail = trim((string) ($p['email'] ?? '')); ?>
-    <li class="pperson card" data-reveal style="--i:<?= $pi % 6 ?>">
+    <li class="pperson card" data-reveal data-i="<?= $pi % 6 ?>">
       <?= immobilien_image(($f = (int) ($p['foto'] ?? 0)) ?: null, $v === 'grid' ? '(min-width: 1080px) 300px, 50vw' : '96px', $v === 'grid' ? '4:5' : '1:1', 'pperson__img') ?>
       <div class="pperson__body">
         <<?= $tag ?> class="pperson__name"<?= entry_edit_attr($t, $p, 'name') ?>><?= e((string) ($p['name'] ?? '')) ?></<?= $tag ?>>
